@@ -1,0 +1,21 @@
+<h1>Listing Consumers</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Phone</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @consumers.each do |consumer| %>
+      <tr>
+        <td><%= consumer.username %></td>
+        <td><%= consumer.phone %></td>
+        <td><%= link_to 'Destroy', consumer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Add Consumers from API', consumers_add_path %>
